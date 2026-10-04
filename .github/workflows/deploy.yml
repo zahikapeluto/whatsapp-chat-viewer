@@ -23,7 +23,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci --fetch-retries=5 --fetch-retry-maxtimeout=120000
+      - run: node .github/scripts/prepare-public-npm-lock.mjs
+      - run: npm ci --registry=https://registry.npmjs.org --fetch-retries=2 --fetch-timeout=30000 --no-audit
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
