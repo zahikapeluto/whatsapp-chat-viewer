@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm ci --fetch-retries=5 --fetch-retry-maxtimeout=120000
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
