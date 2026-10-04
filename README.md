@@ -11,4 +11,4 @@ npm run dev
 
 ## Deploy
 
-GitHub Actions deploys the app to GitHub Pages when changes are pushed to `main`.
+In the repository settings, set **Pages > Build and deployment > Source** to **GitHub Actions**. After that, GitHub Actions deploys the app whenever changes are pushed to `main`.
