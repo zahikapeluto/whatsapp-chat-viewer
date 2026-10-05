@@ -98,26 +98,30 @@ function App() {
 
   return (
     <main className="stage">
-      <button
-        className="import-button"
-        type="button"
-        onClick={() => fileInputRef.current?.click()}
-        disabled={isLoading}
-      >
-        <Upload size={16} aria-hidden="true" />
-        {isLoading ? 'Opening…' : 'Open chat ZIP'}
-      </button>
-      <input
-        ref={fileInputRef}
-        className="file-input"
-        type="file"
-        accept=".zip,application/zip"
-        aria-label="Choose a WhatsApp chat export ZIP"
-        onChange={(event) => {
-          void handleFile(event.currentTarget.files?.[0])
-          event.currentTarget.value = ''
-        }}
-      />
+      {isSample && (
+        <>
+          <button
+            className="import-button"
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isLoading}
+          >
+            <Upload size={16} aria-hidden="true" />
+            {isLoading ? 'Opening…' : 'Open chat ZIP'}
+          </button>
+          <input
+            ref={fileInputRef}
+            className="file-input"
+            type="file"
+            accept=".zip,application/zip"
+            aria-label="Choose a WhatsApp chat export ZIP"
+            onChange={(event) => {
+              void handleFile(event.currentTarget.files?.[0])
+              event.currentTarget.value = ''
+            }}
+          />
+        </>
+      )}
 
       <section className="phone" aria-label="WhatsApp chat">
         <div className="screen">
