@@ -1,6 +1,7 @@
 # WhatsApp Chat Viewer
 
-View WhatsApp exported chats in your browser.
+There's a feature in WhatsApp that allows you to export a chat (w/ or w/o media); however, there's no way to import that chat back into the app.
+WhatsApp Chat Viewer is a frontend-only responsive web app that lets you do just that.
 
 ## Run locally
 
